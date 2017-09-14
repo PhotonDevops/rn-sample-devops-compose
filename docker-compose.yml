@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  website:
+    image: photondevops/photon-devops:website
+    container_name: sample_website
+    ports: 
+      - "8081:3000"
+    depends_on: 
+      - springboot
+
+  springboot:
+    image: photondevops/photon-devops:service
+    container_name: sample_service
+    ports:
+      - "8082:7070" 
